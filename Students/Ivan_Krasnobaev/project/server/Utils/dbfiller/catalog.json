@@ -42,17 +42,20 @@
  {
   "product_name": "Кошка",
   "price": "100",
-  "id_product": "1591206736019"
+  "id_product": "1591206736019",
+  "type": "животное"
  },
  {
   "product_name": "Собака",
   "price": "50",
-  "id_product": "1591206838968"
+  "id_product": "1591206838968",
+  "type": "животное"
  },
  {
   "product_name": "Сечин",
   "price": "30000000",
-  "id_product": "1591206900747"
+  "id_product": "1591206900747",
+  "type": "животное"
  },
  {
   "product_name": "Коврик",

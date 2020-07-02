@@ -32,6 +32,7 @@ async function writeCollection(array) {
         try {
             let newProduct = await Products.create({
                 name: item.product_name,
+                type: item.type || 'комплектующие',
                 price: item.price,
                 img: item.img || 'default'
             });
