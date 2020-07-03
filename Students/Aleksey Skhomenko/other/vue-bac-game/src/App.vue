@@ -117,10 +117,13 @@
           align="center"
           justify="center"
         >
-          <v-col cols="6" md="2" class="text-center mx-3">
+          <v-col cols="12" md="6" class="text-center mx-4">
             <game-rules />
           </v-col>
-          <v-col v-if="!isPlaying" cols="6" md="2" class="text-center mx-3">
+          <v-col v-if="!isPlaying" cols="12" md="6" class="text-center mx-4">
+            <game-stats />
+          </v-col>
+          <v-col v-if="!isPlaying" cols="12" md="6" class="text-center mx-4">
             <v-btn large dark @click.stop="play">
               <v-icon left>mdi-nintendo-game-boy</v-icon> Начать игру
             </v-btn>
@@ -193,6 +196,7 @@
 
 <script>
 import gameRules from './components/gameRules.vue';
+import gameStats from './components/gameStats.vue';
 
 const dayjs = require('dayjs');
 
@@ -200,6 +204,7 @@ export default {
   name: 'App',
   components: {
     'game-rules': gameRules,
+    'game-stats': gameStats,
   },
   props: {
     source: String,
@@ -239,7 +244,7 @@ export default {
       this.win = false;
       this.lose = false;
       this.secret = this.generator();
-      this.games.push({ id: this.games.length + 1, turns: [] });
+      this.games.push({ id: this.games.length + 1, turns: [], localStartDate: dayjs().format('DD.MM.YY HH:mm:ss') });
     },
     surrend() {
       if (this.isPlaying) {
@@ -251,6 +256,7 @@ export default {
           lose: true,
           date: dayjs().format('DD.MM.YY HH:mm:ss'),
         });
+        this.push_game_log();
       }
     },
     submit() {
@@ -282,11 +288,12 @@ export default {
           this.games[this.games.length - 1].win = false;
           this.lose = true;
           this.isPlaying = false;
+          this.push_game_log();
         }
         this.inputValue = '';
 
         if (win) {
-          console.log('upload logs;');
+          this.push_game_log();
           this.win = true;
           this.isPlaying = false;
         }
@@ -317,6 +324,22 @@ export default {
       console.log('bulls', bulls, 'cows', cows);
       return (bulls === this.secret.length) ? { win: 1, bulls } : { bulls, cows };
     },
+    push_game_log() {
+      const game = {
+        secret: this.secret,
+        ...this.games[this.games.length - 1],
+        localEndDate: dayjs().format('DD.MM.YY HH:mm:ss'),
+      };
+      delete game.id;
+      return fetch('http://localhost:8080/logs', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(game),
+      }).then((d) => d.json());
+    },
+
   },
 };
 </script>

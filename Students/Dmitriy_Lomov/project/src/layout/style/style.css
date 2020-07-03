@@ -119,7 +119,7 @@ img {
 }
 .cart-item {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
 }
 .cart-item:not(:last-child){
     margin-bottom: 20px;

@@ -1,0 +1,19 @@
+{
+ "contents": [
+  {
+   "id_product": 1,
+   "user_id": 1,
+   "quantity": 3
+  },
+  {
+   "id_product": 4,
+   "user_id": 1,
+   "quantity": 1
+  },
+  {
+   "id_product": 3,
+   "user_id": 1,
+   "quantity": 3
+  }
+ ]
+}
