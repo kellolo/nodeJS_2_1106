@@ -73,12 +73,13 @@ function log(obj) {
 
 /* запрос логов */
 
-function getLogs() {
-  fetch('/', {
+async function getLogs() {
+  const resp = await fetch('/', {
     method: 'POST',
     headers: {
       "Content-Type": "application/json"
     },
     body: JSON.stringify({logs:true})
-  }).then(data => data);
+  });
+  return await resp.json();
 }

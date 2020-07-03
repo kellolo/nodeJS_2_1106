@@ -1,0 +1,40 @@
+{
+ "contents": [
+  {
+   "id_product": 1,
+   "product_name": "Notebook",
+   "price": 1000,
+   "quantity": 3
+  },
+  {
+   "id_product": 4,
+   "product_name": "Mouse",
+   "price": 10,
+   "quantity": 1
+  },
+  {
+   "id_product": 7,
+   "product_name": "USB-camera",
+   "price": 18,
+   "quantity": 1
+  },
+  {
+   "product_name": "Коврик",
+   "price": "100500",
+   "id_product": "1591206987405",
+   "quantity": 1
+  },
+  {
+   "product_name": "Сечин",
+   "price": "30000000",
+   "id_product": "1591206900747",
+   "quantity": 1
+  },
+  {
+   "id_product": 2,
+   "product_name": "Display",
+   "price": 200,
+   "quantity": 1
+  }
+ ]
+}

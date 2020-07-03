@@ -9,7 +9,12 @@ server.use('/', express.static('./public'));
 
 server.post('/', (req, res) => {
   if (req.body.logs ? true : false) {
-    res.json(get());
+    let answer = async () => {
+      let ans = await get();
+      res.json(ans);
+    };
+    
+    answer();
   } else {
     log(req.body.num, req.body.att, req.body.win);
     res.json({ answer: true });

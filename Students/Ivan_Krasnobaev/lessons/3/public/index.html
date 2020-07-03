@@ -7,22 +7,26 @@
     <link rel="stylesheet" href="./css/main.css">
 </head>
 <body>
-    <div class="game">
-        <h1>Bulls&Cows Game</h1>
-        <div class="panel">
-            <p>Загадано 4-х значное число.</p>
-            <div id="answers"></div>
-            <div>
-                <label>
-                    <input type="text" id="inp" placeholder="****" maxlength="4"> 
-                </label>
-            </div>
-            <div class="buttons">
-                <button id="enter">Проверить</button>
-                <button id="withdraw">Сдаться</button>
-                <button id="repeat">Сыграть ещё</button>
+    <div class="container">
+        <div class="game">
+            <h1>Bulls&Cows Game</h1>
+            <div class="panel">
+                <p>Загадано 4-х значное число.</p>
+                <div id="answers"></div>
+                <div>
+                    <label>
+                        <input type="text" id="inp" placeholder="****" maxlength="4"> 
+                    </label>
+                </div>
+                <div class="buttons">
+                    <button id="enter">Проверить</button>
+                    <button id="withdraw">Сдаться</button>
+                    <button id="repeat">Сыграть ещё</button>
+                    <button id="showLogs" data-show="0">Показать логи</button>
+                </div>
             </div>
         </div>
+        <div id="logs"></div>
     </div>
     <script src="./js/functions.js"></script>
     <script src="./js/main.js"></script>

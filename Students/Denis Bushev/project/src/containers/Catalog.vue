@@ -1,7 +1,23 @@
 <template>
-    <div class="products">
-        <item v-for="item of filtered" :key="item.id_product" :item="item"/>
-        <item :type="'temp'" @createnew="addNewCatalogItem"/>
+    <div class="wrapper">
+        <div class="btn_all">
+            <button class="btn" @click="allTypeFilter">
+                Все продукты
+            </button>
+            <button class="btn" @click="typeFile('computer accessories')">
+                Компьютерные аксессуары
+            </button>
+            <button class="btn" @click="typeFile('animals')">
+                Животные
+            </button>
+            <button class="btn" @click="typeFile('DTY')">
+                DTY
+            </button>
+        </div>
+        <div class="products">
+            <item v-for="item of filtered" :key="item._id" :item="item"/>
+            <item :type="'temp'" @createnew="addNewCatalogItem"/>
+        </div>
     </div>
 </template>
 
@@ -27,7 +43,13 @@ export default {
     methods: {
         filter(str) {
             let reg = new RegExp(str, 'i');
-            this.filtered = this.items.filter(el => reg.test(el.product_name));
+            this.filtered = this.items.filter(el => reg.test(el.name));
+        },
+        typeFile(type) {
+            this.filtered = this.items.filter((el) => el.type === type);
+        },
+        allTypeFilter() {
+            this.filtered = this.items;
         },
         addNewCatalogItem(item) { //{name, price}
             let newItem = JSON.parse(JSON.stringify(item));

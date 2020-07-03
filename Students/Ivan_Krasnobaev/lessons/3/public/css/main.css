@@ -5,12 +5,21 @@ body {
   font-family: 'Roboto', sans-serif;
 }
 
-.game {
+.container {
   background: no-repeat url(../img/cow.jpg);
   background-size: cover;
   height: 100vh;
   padding: 25px;
+  display: flex;
 }
+
+#logs {
+  margin-top: 63px;
+  overflow-y: scroll;
+  padding: 5px;
+  background: rgba(255,255,255,0.5);
+}
+
 .game>h1 {
   display: inline;
   padding: 25px;

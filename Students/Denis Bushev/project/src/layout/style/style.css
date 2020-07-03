@@ -184,3 +184,61 @@ img {
 .d-block {
     display: block
 }
+
+.btn_all {
+    display: flex;
+    justify-content: space-around;
+    padding: 10px 0 0 0px;
+}
+
+/* .btn {
+    background-color: #2f4a88;
+    width: 150px;
+    border: 1px solid #2f4a88;
+    border-radius: 5px;
+    font-size: 15px;
+} */
+
+.btn {
+    font-family: Arial,Helvetica,FreeSans,"Liberation Sans","Nimbus Sans L",sans-serif;
+    width: 150px;
+    font-weight: 700;
+    color: rgb(245,245,245);
+    text-shadow: 0 -1px rgba(0,0,0,.1);
+    text-decoration: none;
+    user-select: none;
+    padding: .3em 1em;
+    outline: none;
+    border: none;
+    border-radius: 3px;
+    background: #2f4a88 linear-gradient(#2f6a88, #2f4a88);
+    box-shadow: inset #2f4a88 0 -1px 1px, inset 0 1px 1px #2f6a88, #2f4a88 0 0 0 1px, rgba(0,0,0,.3) 0 2px 5px;
+    -webkit-animation: pulsate 1.2s linear infinite;
+    animation: pulsate 1.2s linear infinite;
+}
+
+/* .btn:hover {
+    background-color: white;
+}
+
+.btn:active {
+    background-color: #2f4a88;
+} */
+
+.btn:hover {
+    -webkit-animation-play-state: paused;
+    animation-play-state: paused;
+    cursor: pointer;
+  }
+.btn:active {
+    top: 1px;
+    color: #fff;
+    text-shadow: 0 -1px rgba(0,0,0,.3), 0 0 5px #ffd, 0 0 8px #fff;
+    box-shadow: 0 -1px 3px rgba(0,0,0,.3), 0 1px 1px #fff, inset 0 1px 2px rgba(0,0,0,.8), inset 0 -1px 0 rgba(0,0,0,.05);
+  }
+@-webkit-keyframes pulsate {
+    50% {color: #fff; text-shadow: 0 -1px rgba(0,0,0,.3), 0 0 5px #ffd, 0 0 8px #fff;}
+  }
+@keyframes pulsate {
+    50% {color: #fff; text-shadow: 0 -1px rgba(0,0,0,.3), 0 0 5px #ffd, 0 0 8px #fff;}
+  }

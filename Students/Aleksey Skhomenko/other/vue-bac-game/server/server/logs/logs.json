@@ -1,0 +1,90 @@
+[
+ {
+  "secret": "9405",
+  "turns": [
+   {
+    "turn": 1,
+    "text": "СДАЛСЯ",
+    "lose": true,
+    "date": "02.07.20 03:31:36"
+   }
+  ],
+  "localStartDate": "02.07.20 03:31:34",
+  "localEndDate": "02.07.20 03:31:36",
+  "id": "game-0001",
+  "serverDate": "02 07 2020, 3:31:36"
+ },
+ {
+  "secret": "3917",
+  "turns": [
+   {
+    "turn": 1,
+    "text": "СДАЛСЯ",
+    "lose": true,
+    "date": "02.07.20 03:35:47"
+   }
+  ],
+  "localStartDate": "02.07.20 03:35:28",
+  "localEndDate": "02.07.20 03:35:47",
+  "id": "game-0002",
+  "serverDate": "02 07 2020, 3:35:47"
+ },
+ {
+  "secret": "2653",
+  "turns": [
+   {
+    "turn": 1,
+    "text": "1234",
+    "bulls": 0,
+    "cows": 2,
+    "lose": false,
+    "date": "02.07.20 03:35:58"
+   },
+   {
+    "turn": 2,
+    "text": "2345",
+    "bulls": 1,
+    "cows": 2,
+    "lose": false,
+    "date": "02.07.20 03:36:02"
+   },
+   {
+    "turn": 3,
+    "text": "3465",
+    "bulls": 0,
+    "cows": 3,
+    "lose": false,
+    "date": "02.07.20 03:36:04"
+   },
+   {
+    "turn": 4,
+    "text": "4657",
+    "bulls": 2,
+    "cows": 0,
+    "lose": false,
+    "date": "02.07.20 03:36:06"
+   },
+   {
+    "turn": 5,
+    "text": "5689",
+    "bulls": 1,
+    "cows": 1,
+    "lose": false,
+    "date": "02.07.20 03:36:12"
+   },
+   {
+    "turn": 6,
+    "text": "2653",
+    "win": 1,
+    "bulls": 4,
+    "lose": false,
+    "date": "02.07.20 03:36:19"
+   }
+  ],
+  "localStartDate": "02.07.20 03:35:47",
+  "localEndDate": "02.07.20 03:36:19",
+  "win": 1,
+  "id": "game-0003",
+  "serverDate": "02 07 2020, 3:36:19"
+ }
+]

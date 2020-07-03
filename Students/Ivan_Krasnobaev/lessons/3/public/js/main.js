@@ -3,10 +3,12 @@ const enter = document.getElementById('enter');
 const withdraw = document.getElementById('withdraw');
 const input = document.getElementById('inp');
 const repeat = document.getElementById('repeat');
+const showLogs = document.getElementById('showLogs');
+const logs = document.getElementById('logs');
 let attempts = 10;
 let number = getNumber();
 
-repeat.hidden = true;
+showHide([repeat, logs]);
 
 console.log(number);
 
@@ -50,4 +52,25 @@ repeat.addEventListener('click', function () {
     number = getNumber();
     attempts = 10;
     console.log(number);
+});
+
+showLogs.addEventListener('click', () => {
+    showHide([logs]);
+    if (showLogs.dataset.show === "1") {
+        showLogs.dataset.show = 0;
+        showLogs.innerText = "Показать логи";
+        logs.innerText = "";
+    } else {
+        showLogs.dataset.show = 1;
+        showLogs.innerText = "Скрыть логи";
+        getLogs().then((data) => {
+            data.forEach(el => {
+                let p = document.createElement("p");
+                p.innerText = "Дата: " + el.end;
+                p.innerText += "\nЗагаданное число: " + el.number;
+                p.innerText += "\nРезультат: " + el.result;
+                logs.appendChild(p);
+            });
+        });
+    }
 });
