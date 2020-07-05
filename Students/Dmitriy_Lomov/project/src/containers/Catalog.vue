@@ -1,24 +1,15 @@
 <template>
-  <div class="wrapper">
-    <button class="btn" @click="typeFilter('notebooks')">
-      Notebooks
-    </button>
-    <button class="btn" @click="typeFilter('monitors')">
-      Monitors
-    </button>
-    <button class="btn" @click="typeFilter('periphery')">
-      Periphery
-    </button>
-    <button class="btn" @click="typeFilter('forGamers')">
-      For gamers
-    </button>
-    <button class="btn reset" @click="resetTypeFilter">
-      reset
-    </button>
-    <div class="products">
+  <div class="d-flex flex-column">
+    <div class="products d-flex flex-wrap justify-content-center align-items-center">
       <item v-for="item of filtered" :key="item._id" :item="item" />
     </div>
-    <item :type="'temp'" @createnew="addNewCatalogItem" />
+    <div>
+      <item
+        class="d-flex justify-content-center align-items-center p-5"
+        :type="'temp'"
+        @createnew="addNewCatalogItem"
+      />
+    </div>
   </div>
 </template>
 
@@ -27,7 +18,6 @@ import item from "../components/Item.vue";
 
 export default {
   components: { item },
-  // components: { catalogItem },
   data() {
     return {
       items: [],
@@ -46,14 +36,7 @@ export default {
       let reg = new RegExp(str, "i");
       this.filtered = this.items.filter((el) => reg.test(el.name));
     },
-    typeFilter(type) {
-      this.filtered = this.items.filter((el) => el.type === type);
-    },
-    resetTypeFilter() {
-      this.filtered = this.items;
-    },
     addNewCatalogItem(item) {
-      //{name, price}
       let newItem = JSON.parse(JSON.stringify(item));
       this.$parent.post("/api/catalog/", newItem).then((res) => {
         if (res.id) {
@@ -65,18 +48,4 @@ export default {
 };
 </script>
 
-<style scoped>
-.wrapper {
-  padding: 25px;
-}
-.btn {
-  cursor: pointer;
-  padding: 8px;
-}
-.reset {
-  background: #ff8783;
-  border: 1px solid #000;
-  border-radius: 2px;
-  padding: 9px;
-}
-</style>
+<style></style>

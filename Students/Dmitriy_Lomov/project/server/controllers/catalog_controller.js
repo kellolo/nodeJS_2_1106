@@ -1,4 +1,4 @@
-const Products = require('../db/models/products.js');
+let Products = require('../db/models/products.js');
 
 module.exports = {
     async load(req, res) {
