@@ -1,13 +1,23 @@
 <template>
   <div id="app">
-    <div id="nav">
+    <!--div id="nav">
       <router-link to="/">Shop</router-link> |
       <router-link to="/home">Home</router-link> |
       <router-link to="/about">About</router-link>
-    </div>
+    </div-->
     <router-view/>
   </div>
 </template>
+
+<script>
+export default {
+  data() {
+    return {
+      User: {} //возм размещение этих данных: Vuex + LocalStorage
+    }
+  },
+}
+</script>
 
 <style>
 #app {
