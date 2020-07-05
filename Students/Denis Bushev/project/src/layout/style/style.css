@@ -199,7 +199,7 @@ img {
     font-size: 15px;
 } */
 
-.btn {
+.btn_filter {
     font-family: Arial,Helvetica,FreeSans,"Liberation Sans","Nimbus Sans L",sans-serif;
     width: 150px;
     font-weight: 700;
@@ -225,12 +225,12 @@ img {
     background-color: #2f4a88;
 } */
 
-.btn:hover {
+.btn_filter:hover {
     -webkit-animation-play-state: paused;
     animation-play-state: paused;
     cursor: pointer;
   }
-.btn:active {
+.btn_filter:active {
     top: 1px;
     color: #fff;
     text-shadow: 0 -1px rgba(0,0,0,.3), 0 0 5px #ffd, 0 0 8px #fff;
