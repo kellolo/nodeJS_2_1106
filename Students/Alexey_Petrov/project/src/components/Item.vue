@@ -37,7 +37,7 @@
                 <button class="buy-btn" 
                     name="buy-btn"
                     @click="createNew(newProduct)"
-                >Добавить</button>
+                >Добавить </button>
             </div>
         </template>
     </div>

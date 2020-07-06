@@ -1,16 +1,16 @@
 <template>
     <div class="wrapper">
         <div class="btn_all">
-            <button class="btn" @click="allTypeFilter">
+            <button class="btn_filter" @click="allTypeFilter">
                 Все продукты
             </button>
-            <button class="btn" @click="typeFile('computer accessories')">
+            <button class="btn_filter" @click="typeFile('computer accessories')">
                 Компьютерные аксессуары
             </button>
-            <button class="btn" @click="typeFile('animals')">
+            <button class="btn_filter" @click="typeFile('animals')">
                 Животные
             </button>
-            <button class="btn" @click="typeFile('DTY')">
+            <button class="btn_filter" @click="typeFile('DTY')">
                 DTY
             </button>
         </div>
