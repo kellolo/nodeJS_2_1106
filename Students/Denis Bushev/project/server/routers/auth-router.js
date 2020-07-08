@@ -1,14 +1,12 @@
 let express = require('express');
 
-let { createAccount } = require('../controllers/auth_controller.js');
+let { createAccount, login } = require('../controllers/auth_controller.js');
 
 
 let router = express.Router();
 
 router.post('/create', createAccount); // /auth/create
 
-router.post('/', (req, res) => {
-    
-}); // /auth
+router.post('/', login); // /auth
 
 module.exports = router;
