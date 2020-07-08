@@ -6,7 +6,6 @@ let userSchema = new Schema({
   password: { type: String, required: true },
   admin: { type: Boolean, required: false, default: false },
   basket: { type: String, required: false, default: "" },
-  // type:
 });
 
 module.exports = mong.model("USERS", userSchema);
