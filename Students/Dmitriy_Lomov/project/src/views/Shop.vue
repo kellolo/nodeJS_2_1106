@@ -1,15 +1,22 @@
 <template>
-  <div>
-    <header>
-      <div class="logo">E-shop</div>
-      <div class="cart">
+  <div class="main">
+    <header class="d-flex justify-content-between align-items-center px-5">
+      <div class="logo">
+        <img src="../assets/logo.png" alt="Company logo" />
+      </div>
+      <div class="cart d-flex align-items-center">
         <FormSearch @search="filterCatalog" />
-        <button class="btn-cart" @click="showBasket = !showBasket">Cart</button>
+        <button class="btn-cart" @click="showBasket = !showBasket">
+          <i class="fa fa-shopping-cart"></i>
+        </button>
         <Basket ref="basket" v-show="showBasket" />
       </div>
     </header>
-    <main>
-      <Catalog @add="addItem" ref="catalog" />
+    <main class="p-5">
+      <Catalog
+        @add="addItem"
+        ref="catalog"
+      />
     </main>
   </div>
 </template>
@@ -67,3 +74,29 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+.main {
+  background: url("../assets/main_bg.jpg");
+  background-size: cover;
+}
+header {
+  background: rgba(0, 0, 0, 0.7);
+  border: 1px solid #ea1772;
+}
+.btn-cart {
+  margin-left: 10px;
+  background: inherit;
+  border: none;
+  padding: 5px;
+  color: #ea1772;
+  transition: all ease 0.3s;
+  outline: none;
+}
+.btn-cart:hover {
+  color: #dfe7ec;
+}
+.btn-cart:focus {
+  border-bottom: 1px solid #ea1772;
+}
+</style>

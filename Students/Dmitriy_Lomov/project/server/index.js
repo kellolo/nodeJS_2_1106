@@ -1,22 +1,23 @@
-const express = require("express");
+let express = require('express');
 
-const db = require("mongoose");
+let db = require('mongoose');
 
-db.connect("mongodb://localhost/geekshop", {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
+db.connect('mongodb://localhost/geekshop', {
+    useNewUrlParser: true,
+    useUnifiedTopology: true
 });
 
-const server = express();
 
-server.use(express.json());
+let server = express();
+server.use(express.json()); //popozje
+let basketRouter = require('./routers/basket-router');
+let catalogRouter = require('./routers/catalog-router');
+let authRouter = require('./routers/auth-router');
 
-const basketRouter = require("./routers/basket-router");
-const catalogRouter = require("./routers/catalog-router");
-
-server.use("/basket", basketRouter);
-server.use("/catalog", catalogRouter);
+server.use('/basket', basketRouter);
+server.use('/catalog', catalogRouter);
+server.use('/auth', authRouter);
 
 server.listen(8080, () => {
-  console.log("Server is running at port 8080");
+    console.log('Server is running at port 8080')
 });
