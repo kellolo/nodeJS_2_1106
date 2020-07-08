@@ -27,7 +27,7 @@ export default {
     methods: {
         filter(str) {
             let reg = new RegExp(str, 'i');
-            this.filtered = this.items.filter(el => reg.test(el.product_name));
+            this.filtered = this.items.filter(el => reg.test(el.name));
         },
         addNewCatalogItem(item) { //{name, price}
             let newItem = JSON.parse(JSON.stringify(item));

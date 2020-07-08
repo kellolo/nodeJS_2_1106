@@ -1,5 +1,12 @@
 let express = require('express');
 
+const db = require('mongoose');
+
+db.connect('mongodb://localhost/geekshop', {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+});
+
 let server = express();
 server.use(express.json()); //popozje
 
