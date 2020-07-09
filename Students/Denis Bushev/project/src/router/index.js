@@ -3,6 +3,7 @@ import VueRouter from 'vue-router'
 // import Home from '../views/Home.vue'
 import Shop from '../views/Shop.vue'
 import Auth from '../views/Auth.vue'
+import Profile from '../views/Profile.vue'
 
 Vue.use(VueRouter)
 
@@ -17,16 +18,11 @@ Vue.use(VueRouter)
     name: 'Shop',
     component: Shop
   },
-  // {
-  //   path: '/home',
-  //   name: 'Home',
-  //   component: Home
-  // },
-  // {
-  //   path: '/about',
-  //   name: 'About',
-  //   component: () => import('../views/About.vue')
-  // }
+  {
+    path: '/:id/profile',
+    name: 'Profile',
+    component: Profile
+  }
 ]
 
 const router = new VueRouter({

@@ -1,10 +1,11 @@
 <template>
   <div>
-    <header>
+    <header class="head">
         <div class="logo">E-shop</div>
         <div class="cart">
             <FormSearch @search="filterCatalog" />
             <button class="btn-cart" @click="showBasket = !showBasket">Cart</button>
+            <a href="" id="profile" class="btn btn-info" @click="profile">Profile</a>
             <Basket ref="basket" v-show="showBasket"/>
         </div>
     </header>
@@ -63,6 +64,9 @@ export default {
         },
         addItem(pl) {
             this.$refs.basket.add(pl);
+        },
+        profile() {
+            this.$router.push(this.$route.path + '/profile');
         }
     }
 }
