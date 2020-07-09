@@ -17,3 +17,4 @@ module.exports = {
         return arr.find(el => el.id_product == id);
     }
 }
+//refactor todo ***

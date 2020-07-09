@@ -44,7 +44,7 @@ export default {
                 user._id = res._id;
                 user.login = res.login;
                 user.basket = res.basket;
-                localStorage.userItem = JSON.stringify(res);
+
                 this.$router.push('/' + res._id);
             })
         },

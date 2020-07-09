@@ -1,7 +1,7 @@
 <template>
     <div class="products">
         <item v-for="item of filtered" :key="item._id" :item="item"/>
-        <item :type="'temp'"  v-if="this.useritems.admin" @createnew="addNewCatalogItem"/>
+        <item :type="'temp'" @createnew="addNewCatalogItem"/>
     </div>
 </template>
 
@@ -13,7 +13,6 @@ export default {
     // components: { catalogItem },
     data() {
         return {
-            useritems: [],
             items: [],
             filtered: [],
             url: '/api/catalog'
@@ -23,11 +22,7 @@ export default {
         this.$parent.get(this.url).then(d => {
             this.items = d;
             this.filtered = d;
-            
-          
-        });
-         this.useritems = JSON.parse(localStorage.userItem)
-        
+        })
     },
     methods: {
         filter(str) {

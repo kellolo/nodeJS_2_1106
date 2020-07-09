@@ -6,7 +6,7 @@ module.exports = {
             let users = await Users.find({ login: req.body.login, password: req.body.password });
             if(users.length) {
                 let user = users[0];
-                res.json({ _id: user._id, login: user.login, basket: user.basket, admin: user.admin  });
+                res.json({ _id: user._id, login: user.login, basket: user.basket });
             } else {
                 res.sendStatus(404);
             }
