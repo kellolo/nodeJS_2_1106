@@ -1,5 +1,8 @@
 <template>
-  <div class="prod-wrap m-2 pb-2" :class="computedWrapperClassName">
+  <div
+    class="prod-wrap d-flex flex-wrap justify-content-between align-items-center p-3 m-2"
+    :class="computedWrapperClassName"
+  >
     <img :src="computedImgSrc" :alt="item.name" />
 
     <template v-if="type == 'catalog'">
@@ -7,8 +10,8 @@
         <h1>{{ item.name }}</h1>
         <p>{{ item.price }}</p>
         <button
-          class="buy-btn"
           name="buy-btn"
+          class="btns buy-btn"
           @click="$parent.$emit('add', item)"
         >
           Купить
@@ -17,13 +20,17 @@
     </template>
 
     <template v-if="type == 'basket'">
-      <div class="product-desc">
+      <div class="product-desc p-3">
         <p class="product-title">{{ item.name }}</p>
-        <p class="product-quantity">{{ item.amount }}</p>
-        <p class="product-single-price">{{ item.price }}</p>
+        <p class="product-amount">Кол-во: {{ item.amount }}</p>
+        <p class="product-single-price m-0">Цена: {{ item.price }}</p>
       </div>
       <div class="right-block">
-        <button name="del-btn" class="del-btn" @click="$parent.remove(item)">
+        <button
+          name="del-btn"
+          class="btns del-btn"
+          @click="$parent.remove(item)"
+        >
           &times;
         </button>
       </div>
@@ -47,7 +54,11 @@
             class="w-50"
           />
         </label>
-        <button class="buy-btn" name="buy-btn" @click="createNew(newProduct)">
+        <button
+          name="buy-btn"
+          class="btns buy-btn"
+          @click="createNew(newProduct)"
+        >
           Добавить
         </button>
       </div>
@@ -101,28 +112,38 @@ export default {
 .prod-wrap {
   background: rgba(0, 0, 0, 0.8);
   border: 1px solid #ea1772;
+  border-radius: 5px;
   text-shadow: 0 0 2px #000;
+}
+.prod-wrap img {
+  margin-right: 10px;
 }
 .prod-wrap h1 {
   color: #ea1772;
+  margin-top: 0;
 }
 .prod-wrap p {
   color: #dfe7ec;
 }
-.buy-btn {
-  padding: 10px;
+.btns {
   border: 1px solid #ea1772;
-  border-radius: 5px;
   transition: all ease 0.3s;
   outline: none;
   background: inherit;
   color: #ea1772;
 }
-.buy-btn:hover {
+.buy-btn {
+  padding: 10px;
+  border-radius: 5px;
+}
+.btns:hover {
   background: #ea1772;
   color: #dfe7ec;
 }
-.buy-btn:focus {
+.btns:focus {
   box-shadow: 0 0 5px 2px #ea1772;
+}
+.del-btn {
+  border-radius: 50%;
 }
 </style>

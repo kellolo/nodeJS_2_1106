@@ -14,6 +14,11 @@
           <label class="d-flex justify-content-between">
             <input type="password" v-model="password" /><span>Пароль</span>
           </label>
+          <label class="d-flex justify-content-start align-items-center">
+            <input type="checkbox" v-model="admin" /><span class="pl-2"
+              >Админка</span
+            >
+          </label>
           <div class="btns d-flex justify-content-center flex-wrap">
             <a href="#" class="signBtn sign-in mr-1 mt-1" @click="signIn"
               >Sign In</a
@@ -44,6 +49,7 @@ export default {
     return {
       login: "",
       password: "",
+      admin: false,
     };
   },
   methods: {
@@ -51,12 +57,14 @@ export default {
       this.post("/api/auth", {
         login: this.login,
         password: this.password,
+        admin: this.admin,
       }).then((res) => {
         let user = this.$root.$children[0].User;
 
         user._id = res._id;
         user.login = res.login;
         user.basket = res.basket;
+        user.admin = res.admin;
 
         this.$router.push("/" + res._id);
       });
@@ -67,12 +75,14 @@ export default {
       this.post("/api/auth/create", {
         login: this.login,
         password: this.password,
+        admin: this.admin,
       }).then((res) => {
         let user = this.$root.$children[0].User;
 
         user._id = res._id;
         user.login = res.login;
         user.basket = res.basket;
+        user.admin = res.admin;
 
         this.$router.push("/" + res._id);
       });

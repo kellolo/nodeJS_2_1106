@@ -1,10 +1,13 @@
 <template>
   <div class="d-flex flex-column">
-    <div class="products d-flex flex-wrap justify-content-center align-items-center">
+    <div
+      class="products d-flex flex-wrap justify-content-center align-items-center"
+    >
       <item v-for="item of filtered" :key="item._id" :item="item" />
     </div>
     <div>
       <item
+        v-if="this.isAdmin"
         class="d-flex justify-content-center align-items-center p-5"
         :type="'temp'"
         @createnew="addNewCatalogItem"
@@ -22,6 +25,7 @@ export default {
     return {
       items: [],
       filtered: [],
+      isAdmin: false,
       url: "/api/catalog",
     };
   },
