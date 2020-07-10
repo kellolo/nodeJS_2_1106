@@ -1,0 +1,16 @@
+{
+ "contents": [
+  {
+   "id_product": 1,
+   "product_name": "Notebook",
+   "price": 1000,
+   "quantity": 3
+  },
+  {
+   "id_product": 7,
+   "product_name": "USB-camera",
+   "price": 18,
+   "quantity": 1
+  }
+ ]
+}

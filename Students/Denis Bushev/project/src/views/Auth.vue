@@ -1,6 +1,6 @@
 <template>
   <div>
-      <header>
+      <header class="head">
           <div class="logo">GEEK-shop</div>
       </header>
 
@@ -34,7 +34,7 @@ export default {
     },
     methods: {
         signIn() {
-            this.post('/api/auth/create', {
+            this.post('/api/auth', {
                 login: this.login,
                 password: this.password
             })
