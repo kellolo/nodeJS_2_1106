@@ -13,10 +13,11 @@
       </div>
     </header>
     <main class="p-5">
-      <Catalog
-        @add="addItem"
-        ref="catalog"
-      />
+      <Catalog @add="addItem" ref="catalog" />
+      <button type="button" class="btn-chat" @click="showChat = !showChat">
+        <i class="fa fa-comments" aria-hidden="true"></i>
+      </button>
+      <Chat v-if="this.showChat" />
     </main>
   </div>
 </template>
@@ -25,12 +26,14 @@
 import Basket from "../containers/Basket.vue";
 import Catalog from "../containers/Catalog.vue";
 import FormSearch from "../components/Search";
+import Chat from "../components/Сhat";
 
 export default {
-  components: { Basket, Catalog, FormSearch },
+  components: { Basket, Catalog, FormSearch, Chat },
   data() {
     return {
       showBasket: false,
+      showChat: false,
     };
   },
   methods: {
@@ -98,5 +101,28 @@ header {
 }
 .btn-cart:focus {
   border-bottom: 1px solid #ea1772;
+}
+.btn-chat {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #ea1772;
+  border: 1px solid #ea1772;
+  border-radius: 50%;
+  padding: 10px;
+  font-size: 1.2em;
+  color: #fff;
+  transition: all ease 0.3s;
+  outline: none;
+}
+.btn-chat:hover {
+  background: #c0135e;
+  box-shadow: 0 0 4px 1px #ea1772;
+}
+.btn-chat:active {
+  color: #ddd;
+}
+.btn-chat:focus {
+  box-shadow: 0 0 5px 2px #ea1772;
 }
 </style>

@@ -6,7 +6,6 @@ let prodSchema = new Schema({
   price: { type: Number, required: true },
   img: { type: String, required: false },
   amount: { type: Number, required: false, default: null },
-  // type:
 });
 
 module.exports = mong.model("PRODUCTS", prodSchema);
