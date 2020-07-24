@@ -1,0 +1,27 @@
+{
+  "name": "0_server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "api": "nodemon server",
+    "fill": "node server/Utils/dbfiller"
+  },
+  "nodemonConfig": {
+    "ignore": [
+      "*.json"
+    ]
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "moment": "^2.26.0",
+    "nodemon": "^2.0.4"
+  },
+  "devDependencies": {
+    "mongoose": "^5.9.22",
+    "socket.io": "^2.3.0"
+  }
+}
