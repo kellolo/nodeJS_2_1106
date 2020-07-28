@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BandC</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div id="game">
+        <h1 v-if="!isStart">Добро пожаловать</h1>
+        <button @click="botStart">Начать игру</button>
+        <div class="numbers" v-if="isStart">
+            <input type="text" id="userInp1" maxlength="1" class="num">
+            <input type="text" id="userInp2" maxlength="1" class="num">
+            <input type="text" id="userInp3" maxlength="1" class="num">
+            <input type="text" id="userInp4" maxlength="1" class="num">
+        </div>
+        <div v-if="isStart" class="info">
+            <button @click="startGame">Ответ</button>
+            <p>Быки - {{ bulls }}</p>
+            <p>Коровы - {{ cows }}</p>
+            <p>Попытки - {{ tryCount }}</p>
+        </div>
+        <div v-if="game == 'lose'">
+            <p>Вы проиграли</p>
+            <p>Правильный ответ - {{ bot.join(' ') }}</p>
+        </div>
+        <p v-if="game == 'win'">Вы выйграли</p>
+    </div>
+    <script src="js/vue.js"></script>
+    <script src="js/main.js"></script>
+   
+</body>
+</html>

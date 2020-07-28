@@ -1,0 +1,12 @@
+[
+ "{\n \"time\": \"03 06 2020, 8:28:55\",\n \"product\": \"Notebook\",\n \"action\": \"change\"\n}",
+ "{\n \"time\": \"03 06 2020, 8:29:15\",\n \"product\": \"Display\",\n \"action\": \"add\"\n}",
+ "{\n \"time\": \"03 06 2020, 8:53:00\",\n \"product\": \"Display\",\n \"action\": \"remove\"\n}",
+ "{\n \"time\": \"11 06 2020, 7:21:30\",\n \"product\": \"Notebook\",\n \"action\": \"change\"\n}",
+ "{\n \"time\": \"11 06 2020, 7:21:34\",\n \"product\": \"Mouse\",\n \"action\": \"add\"\n}",
+ "{\n \"time\": \"22 06 2020, 11:08:06\",\n \"product\": \"USB-camera\",\n \"action\": \"add\"\n}",
+ "{\n \"time\": \"25 06 2020, 7:40:35\",\n \"product\": \"USB-camera\",\n \"action\": \"remove\"\n}",
+ "{\n \"time\": \"25 06 2020, 7:40:44\",\n \"product\": \"Keyboard\",\n \"action\": \"add\"\n}",
+ "{\n \"time\": \"25 06 2020, 7:40:46\",\n \"product\": \"Keyboard\",\n \"action\": \"change\"\n}",
+ "{\n \"time\": \"25 06 2020, 7:40:48\",\n \"product\": \"Keyboard\",\n \"action\": \"change\"\n}"
+]
