@@ -5,7 +5,7 @@
 
         <template v-if="type=='catalog'">
             <div class="desc">
-                <h1>{{ item.product_name }}</h1>
+                <h1>{{ item.name }}</h1>
                 <p>{{ item.price }}</p>
                 <button 
                     class="buy-btn" 
@@ -17,7 +17,7 @@
 
         <template v-if="type=='basket'">
             <div class="product-desc">
-                <p class="product-title">{{ item.product_name  }}</p>
+                <p class="product-title">{{ item.name }}</p>
                 <p class="product-quantity">{{ item.amount }}</p>
                 <p class="product-single-price">{{ item.price }}</p>
             </div>
@@ -29,7 +29,7 @@
         <template v-else-if="type === 'temp'">
             <div class="desc w-75">
                 <label >
-                    <input type="text" placeholder="Item name" v-model="newProduct.product_name " class="w-50">
+                    <input type="text" placeholder="Item name" v-model="newProduct.name" class="w-50">
                 </label>
                 <label >
                     <input type="number" placeholder="Item price" v-model="newProduct.price" class="w-50">

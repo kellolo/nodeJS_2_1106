@@ -10,6 +10,7 @@
     </header>
     <main>
         <Catalog @add="addItem" ref="catalog"/>
+        <Chat />
     </main>
   </div>
 </template>
@@ -18,9 +19,10 @@
 import Basket from '../containers/Basket.vue'
 import Catalog from '../containers/Catalog.vue'
 import FormSearch from '../components/Search'
+import Chat from '../components/chat'
 
 export default {
-    components: { Basket, Catalog, FormSearch },
+    components: { Basket, Catalog, FormSearch, Chat },
     data() {
         return {
             showBasket: false
@@ -33,7 +35,10 @@ export default {
             this.$refs.catalog.filter(str);
         },
         get(url) {
-            return fetch(url).then(d => d.json());
+            return fetch(url, { 
+                // credentials: '1/2/3
+                // ...: 'Bearer ' + token
+             }).then(d => d.json());
         },
         post(url, item) {
             return fetch(url, {

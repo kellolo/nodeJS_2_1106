@@ -55,16 +55,17 @@ export default {
             }
         },
         remove(item) {
-            let find = this.items.find(el => el.id_product == item.id_product); 
-            if (find.amount == 1) {
-                this.$parent.delete(`/api/basket`  + this.$route.path)
+            let find = this.items.find(el => el.id_product == item.id_product);
+
+            if (find.quantity == 1) {
+                this.$parent.delete(`/api/basket/${item.id_product}`)
                     .then(res => {
                         if (res.status) {
                             this.items.splice(this.items.indexOf(find), 1);
                         }
                     });
             } else {
-                this.$parent.put(`/api/basket` + this.$route.path, { amount: -1, _id: find._id })
+                this.$parent.put(`/api/basket/${this.$route.path}`, { amount: -1, _id: find._id })
                     .then(res => {
                         if (res.status) {
                             find.amount--

@@ -59,24 +59,4 @@ module.exports = {
         }
     },
     // async delete todo
-    async remove(req, res) {
-        try {
-          let basketCollection = await Basket.find({ user_id: req.params.id });
-          if (basketCollection.length) {
-            let basket = basketCollection[0];
-            let _items = basket.items;
-                
-            let find = _items.find((item) => {
-              item._id = req.body._id;
-            });
-            _items.splice(_items.indexOf(find), 1);
-   
-            await basket.updateOne({ items: _items });
-            res.json({ status: true });
-          }
-        } catch (err) {
-          console.log("__BASKETDELETE " + err);
-          res.sendStatus(500);
-        }
-      },
 }
